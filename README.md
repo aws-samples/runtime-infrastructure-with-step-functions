@@ -14,6 +14,8 @@ Note that this is a proof of concept solution. While it does use many AWS best p
 - AWS CDK Toolkit
 - Bootstrapped AWS account / region
 
+The commands in `package.json` leverage the `cdk` executable and do not specify a profile. They will inherently use the `[default]` profile unless otherwise specified by the `AWS_PROFILE` environment variable. For more details, see [this link](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html).
+
 ## 2. Setup
 
 To build the application and deploy it into an AWS account, follow these steps:

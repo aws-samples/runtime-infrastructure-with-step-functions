@@ -1,0 +1,38 @@
+{
+    "name": "@cwietnie/runtime-infrastructure-with-step-functions",
+    "license": "MIT-0",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+        "build": "webpack --config webpack.config.js --env=production",
+        "deploy": "cdk synth && cdk deploy",
+        "deploy-lambda-api": "cd dist && zip -jqr ./api.zip ./api && aws lambda update-function-code --function-name RuntimeInfraDemo-Function-Api --zip-file fileb://api.zip",
+        "deploy-lambda-state-machine": "cd dist && zip -jqr ./state-machine.zip ./state-machine && aws lambda update-function-code --function-name RuntimeInfraDemo-Function-StateMachine --zip-file fileb://state-machine.zip",
+        "teardown": "cdk destroy",
+        "clean": "rm -rf ./dist && rm -rf ./cdk.out",
+        "lint": "eslint './**/*.ts' --fix --config ./.eslintrc-amazonip.js"
+    },
+    "dependencies": {
+        "dynamoose": "^2.8.5",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.97",
+        "@types/node": "^16.11.36",
+        "@types/uuid": "^8.3.4",
+        "@typescript-eslint/eslint-plugin": "^5.26.0",
+        "aws-cdk-lib": "^2.25.0",
+        "aws-lambda": "^1.0.7",
+        "aws-sdk": "^2.1148.0",
+        "cdk-nag": "^2.14.13",
+        "eslint": "^8.16.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-header": "^3.1.1",
+        "eslint-plugin-prettier": "^4.0.0",
+        "fork-ts-checker-webpack-plugin": "^7.2.11",
+        "ts-loader": "^9.3.0",
+        "ts-node": "^10.8.0",
+        "typescript": "^4.7.2",
+        "webpack-cli": "^4.9.2"
+    }
+}

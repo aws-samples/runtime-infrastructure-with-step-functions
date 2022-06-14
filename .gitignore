@@ -1,0 +1,33 @@
+# Compiled output
+/dist
+/node_modules
+
+# Logs
+logs
+*.log
+
+# OS
+.DS_Store
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# CDK
+cdk.out
+
+# Scanning tools
+sonar-project.properties
+.scannerwork

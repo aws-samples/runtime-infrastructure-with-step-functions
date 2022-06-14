@@ -1,0 +1,7 @@
+{
+    "extends": "./tsconfig.json",
+    "include": ["./src/api-lambda.ts"],
+    "compilerOptions": {
+        "outDir": "./dist/api"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "extends": "./tsconfig.json",
+    "include": ["./src/state-machine-lambda.ts"],
+    "compilerOptions": {
+        "outDir": "./dist/state-machine"
+    }
+}
